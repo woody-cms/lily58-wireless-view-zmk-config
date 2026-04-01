@@ -32,7 +32,7 @@
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
-        lower_layer {
+        special_chars {
             // ------------------------------------------------------------------------------------------------------------
             // | BTCLR | BT1 | BT2 |  BT3 |  BT4 |  BT5 |                   |      |       |       |      |       |       |
             // |  F1   |  F2 |  F3 |  F4  |  F5  |  F6  |                   |  F7  |  F8   |  F9   |  F10 |  F11  |  F12  |
@@ -42,17 +42,18 @@
 
             display-name = "Lower";
             bindings = <
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                    &trans     &trans     &trans           &trans    &trans    &trans
-&kp F1      &kp F2        &kp F3        &kp F4        &kp F5        &kp F6                          &kp F7     &kp F8     &kp F9           &kp F10   &kp F11   &kp F12
-&kp GRAVE   &kp EXCL      &kp AT        &kp HASH      &kp DOLLAR    &kp PRCNT                       &kp CARET  &kp AMPS   &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &kp TILDE
-&trans      &trans        &trans        &trans        &trans        &trans        &trans    &trans  &trans     &kp MINUS  &kp KP_PLUS      &kp LBRC  &kp RBRC  &kp PIPE
-                                        &trans        &trans        &trans        &trans    &trans  &trans     &trans     &trans
+&kp TILDE   &kp F1     &kp F2  &kp F3          &kp F4                &kp F5                                   &kp F6         &kp F7     &kp F8           &kp F9    &kp F10   &kp F11
+&kp RA(F1)  &kp F2     &kp F3  &kp F4          &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS                    &kp COLON      &kp F8     &kp F9           &kp F10   &kp F11   &kp F12
+&kp GRAVE   &kp RA(Q)  &kp AT  &kp MINUS       &kp LEFT_BRACKET      &kp RIGHT_BRACKET                        &kp SEMICOLON  &kp PLUS   &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &kp TILDE
+&trans      &trans     &trans  &kp UNDERSCORE  &kp LEFT_BRACE        &kp RIGHT_BRACE        &trans    &trans  &kp PERIOD     &kp EQUAL  &kp KP_PLUS      &kp LBRC  &kp RBRC  &kp PIPE
+                               &trans          &trans                &trans                 &trans    &trans  &trans         &trans     &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+            label = "special";
         };
 
-        raise_layer {
+        arrows_layer {
             // ------------------------------------------------------------------------------------------------------------
             // |       |     |     |      |      |      |                   |      |       |       |      |       |       |
             // |   `   |  1  |  2  |  3   |  4   |  5   |                   |  6   |   7   |   8   |  9   |   0   |       |
@@ -62,14 +63,15 @@
 
             display-name = "Raise";
             bindings = <
-&trans     &trans  &trans  &trans   &trans   &trans                     &trans       &trans     &trans     &trans    &trans     &trans
-&kp GRAVE  &kp N1  &kp N2  &kp N3   &kp N4   &kp N5                     &kp N6       &kp N7     &kp N8     &kp N9    &kp N0     &trans
-&kp F1     &kp F2  &kp F3  &kp F4   &kp F5   &kp F6                     &trans       &kp LEFT   &kp DOWN   &kp UP    &kp RIGHT  &trans
-&kp F7     &kp F8  &kp F9  &kp F10  &kp F11  &kp F12  &trans    &trans  &kp KP_PLUS  &kp MINUS  &kp EQUAL  &kp LBKT  &kp RBKT   &kp BSLH
-                           &trans   &trans   &trans   &trans    &trans  &trans       &trans     &trans
+&trans      &kp K_MUTE    &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &trans         &trans                          &trans            &trans        &kp PAGE_UP    &trans             &trans             &trans
+&kp GRAVE   &kp N1        &kp N2             &kp N3           &kp LS(LC(R))  &kp N5                          &kp LS(HOME)      &kp N7        &kp UP_ARROW   &kp N9             &kp LS(END)        &trans
+&kp F1      &kp F2        &kp F3             &kp F4           &kp LS(LC(F))  &kp F6                          &kp LS(LC(LEFT))  &kp LEFT      &kp DOWN       &kp RIGHT          &kp LC(LS(RIGHT))  &trans
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1       &bt BT_SEL 2     &bt BT_SEL 3   &bt BT_SEL 4  &trans    &trans  &kp KP_PLUS       &kp LS(LEFT)  &kp PAGE_DOWN  &kp LS(LC(RIGHT))  &kp RBKT           &kp BSLH
+                                             &trans           &trans         &trans        &trans    &trans  &trans            &trans        &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+            label = "arrows";
         };
 
         extra_1 { status = "reserved"; };
