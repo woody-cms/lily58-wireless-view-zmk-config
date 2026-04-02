@@ -53,7 +53,7 @@
             // |       |     |     |      |      |      |        |  |       |      |  _    |  +    |  {   |   }   |  "|"  |
             //                     |      |      |      |        |  |       |      |       |       |
 
-            display-name = "Lower";
+            display-name = "Special";
             bindings = <
 &kp TILDE   &kp F1     &kp F2     &kp F3          &kp F4                &kp F5                                   &kp F6         &kp F7     &kp F8           &kp F9     &kp F10   &kp F11
 &kp RA(F1)  &kp F2     &kp F3     &kp F4          &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS                    &kp COLON      &kp RA(Y)  &kp F9           &kp RA(P)  &kp F11   &kp F12
@@ -74,7 +74,7 @@
             // |   F7  |  F8 |  F9 |  F10 |  F11 |  F12 |        |  |       |  +   |   -   |   =   |  [   |   ]   |   \   |
             //                     |      |      |      |        |  |       |      |       |       |
 
-            display-name = "Raise";
+            display-name = "Arrows";
             bindings = <
 &trans      &kp K_MUTE    &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &trans         &trans                          &trans            &trans        &kp PAGE_UP    &trans             &trans             &trans
 &kp GRAVE   &kp N1        &kp N2             &kp N3           &kp LS(LC(R))  &kp N5                          &kp LS(HOME)      &kp N7        &kp UP_ARROW   &kp N9             &kp LS(END)        &trans
