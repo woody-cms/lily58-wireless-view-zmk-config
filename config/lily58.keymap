@@ -22,6 +22,24 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        Toggle_gaming_layer {
+            bindings = <&toggle_gaming_layer>;
+            key-positions = <53 54>;
+        };
+    };
+
+    macros {
+        toggle_gaming_layer: toggle_gaming_layer {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&to 3 &tog 3>;
+            label = "TOGGLE_GAMING_LAYER";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -77,7 +95,7 @@
             display-name = "Arrows";
             bindings = <
 &trans      &kp K_MUTE    &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &trans         &trans                          &trans            &trans        &kp PAGE_UP    &trans             &trans             &trans
-&kp GRAVE   &kp N1        &kp N2             &kp N3           &kp LS(LC(R))  &kp N5                          &kp LS(HOME)      &kp N7        &kp UP_ARROW   &kp N9             &kp LS(END)        &trans
+&kp GRAVE   &kp N1        &kp N2             &kp N3           &kp LS(LC(R))  &kp N5                          &kp LS(HOME)      &kp HOME      &kp UP_ARROW   &kp END            &kp LS(END)        &trans
 &kp F1      &kp F2        &kp F3             &kp F4           &kp LS(LC(F))  &kp F6                          &kp LS(LC(LEFT))  &kp LEFT      &kp DOWN       &kp RIGHT          &kp LC(LS(RIGHT))  &trans
 &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1       &bt BT_SEL 2     &bt BT_SEL 3   &bt BT_SEL 4  &trans    &trans  &kp KP_PLUS       &kp LS(LEFT)  &kp PAGE_DOWN  &kp LS(LC(RIGHT))  &kp RBKT           &kp BSLH
                                              &trans           &trans         &trans        &trans    &trans  &trans            &trans        &trans
@@ -85,6 +103,19 @@
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
             label = "arrows";
+        };
+
+        gaming_layer {
+            display-name = "Gaming";
+            bindings = <
+&kp ESC       &kp N1  &kp N2  &kp N3    &kp N4     &kp N5                                   &kp N6     &kp N7        &kp N8        &kp N9   &kp N0    &kp DELETE
+&kp TAB       &kp Q   &kp W   &kp E     &kp R      &kp T                                    &kp Z      &kp U         &kp I         &kp O    &kp P     &kp BACKSLASH
+&kp LSHFT     &kp A   &kp S   &kp D     &kp F      &kp G                                    &kp H      &HRM RCTRL J  &HRM RSHFT K  &kp L    &kp SEMI  &kp SQT
+&kp LEFT_WIN  &kp Y   &kp X   &kp C     &kp V      &kp B          &kp LG(LS(S))    &kp F12  &kp N      &kp M         &kp COMMA     &kp DOT  &kp FSLH  &kp ENTER
+                              &kp LALT  &kp LCTRL  &kp BACKSPACE  &mo 1            &mo 2    &kp SPACE  &kp RCTRL     &kp RGUI
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         extra_1 { status = "reserved"; };
